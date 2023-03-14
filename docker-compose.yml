@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  db:
+    image: postgres-node
+    environment:
+      POSTGRES_PASSWORD: lol12345
+    ports:
+      - 5432:5432
+    build:
+      context: ./packages/db
+      dockerfile: Dockerfile
