@@ -58,7 +58,7 @@ export function Posts() {
 
       {data.map(post => {
         return (
-          <div>
+          <div key={`post-list-${post.id}`}>
             <p>{post.content}</p>
             <Link to={`/post/${post.id}`}>View Post</Link> - <span>By: {post.username}</span>
           </div>

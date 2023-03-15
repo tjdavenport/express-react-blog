@@ -127,7 +127,7 @@ export function Post() {
         </form>
       )}
       {commentsData.filter(comment => comment.path === '').map(comment => {
-        return <Comment comment={comment} comments={commentsData} onReplied={() => refetchComments()}/>
+        return <Comment key={`comment-${comment.id}`} comment={comment} comments={commentsData} onReplied={() => refetchComments()}/>
       })}
     </div>
   );

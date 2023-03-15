@@ -95,6 +95,7 @@ export const Comment = ({ comment, comments, depth = 0, onReplied = () => {} }) 
         return child.path === `${comment.path}/${comment.id}`
       }).map((child) => (
         <Comment
+          key={`child-comment-${child.id}`}
           comment={child}
           comments={comments}
           depth={child.path.split('/').length}
