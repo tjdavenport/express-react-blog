@@ -113,7 +113,7 @@ export function Post() {
             name="content"
           />
           <br/>
-          <button type="submit">send</button>
+          <button type="submit">save</button>
           {editingError && <span>Error trying to edit post</span>}
         </form>
       )}
@@ -122,7 +122,7 @@ export function Post() {
       {commenting && (
         <form onSubmit={handleCommented}>
           <input type="text" required name="content"/>
-          <button type="submit">send</button>
+          <button type="submit">post</button>
           {commentingError && <span>Error trying to create comment</span>}
         </form>
       )}
