@@ -17,7 +17,8 @@
     "url": "git+https://github.com/tjdavenport/express-react-blog.git"
   },
   "scripts": {
-    "test": "node --loader tsx --test ./tests.ts"
+    "test": "node --loader tsx --test ./tests.ts",
+    "start": "node --loader tsx --test ./tests.ts"
   },
   "bugs": {
     "url": "https://github.com/tjdavenport/express-react-blog/issues"

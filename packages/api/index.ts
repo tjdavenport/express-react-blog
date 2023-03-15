@@ -21,7 +21,7 @@ createPool('postgres://postgres:lol12345@localhost:5432')
     app.post('/comments', routes.createComment(pool));
 
     app.listen(1337, () => {
-      console.info('listening...');
+      console.info('Everything is ready! Open http://localhost:1234');
     });
   }).catch(error => {
     console.error(error);

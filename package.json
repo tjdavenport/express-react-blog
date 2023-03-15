@@ -7,5 +7,8 @@
   "devDependencies": {
     "lerna": "^6.5.1",
     "process": "^0.11.10"
+  },
+  "scripts": {
+    "start": "lerna run start"
   }
 }
