@@ -27,15 +27,17 @@ export const deleteById = (id: number) => sql.typeAlias('void')`
   delete from comments where id = ${id};
 `;
 
-const ThreadedComment = sql.type(z.object({
+const ThreadedComment = z.object({
   id: z.number(),
   path: z.string(),
   content: z.string(),
   username: z.string(),
+  parent_id: z.number(),
   post_id: z.number(),
   user_id: z.number(),
-}));
+});
 
+// https://www.aleksandra.codes/comments-db-model
 export const threadedByPostId = (id: number) => {
   return sql.type(ThreadedComment)`
     with recursive comments_cte (
@@ -43,6 +45,7 @@ export const threadedByPostId = (id: number) => {
       path,
       content,
       username,
+      parent_id,
       post_id,
       user_id
     ) as (
@@ -51,6 +54,7 @@ export const threadedByPostId = (id: number) => {
         '',
         content,
         u.username,
+        parent_id,
         post_id,
         user_id
       from
@@ -65,6 +69,7 @@ export const threadedByPostId = (id: number) => {
         concat(path, '/', r.parent_id),
         r.content,
         u.username,
+        r.parent_id,
         r.post_id,
         r.user_id
       from

@@ -15,8 +15,8 @@ export const up = sql.unsafe`
   create table comments(
     id serial primary key,
     content text not null,
-    parent_id integer references comments,
-    post_id integer not null references posts,
+    parent_id integer references comments on delete cascade,
+    post_id integer not null references posts on delete cascade,
     user_id integer not null references users
   );
 `;

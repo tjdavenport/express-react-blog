@@ -32,6 +32,10 @@ test('db module', async t => {
 
     const post = await pool.one(posts.fake(author.id));
     await pool.one(posts.updateById(post.id, 'an updatedPost'));
+
+    const list = await pool.query(posts.list);
+    assert(list.rows.length === 1);
+
     await pool.query(posts.deleteById(post.id));
   });
 

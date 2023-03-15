@@ -1,5 +1,5 @@
 {
-  "name": "db",
+  "name": "api",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "tjdavenport <tjdavenport2@gmail.com>",
@@ -17,18 +17,17 @@
     "url": "git+https://github.com/tjdavenport/express-react-blog.git"
   },
   "scripts": {
-    "test": "node --loader tsx --test ./tests.ts"
+    "test": "node ./__tests__/api.test.js",
+    "start": "ts-node index.ts"
   },
   "bugs": {
     "url": "https://github.com/tjdavenport/express-react-blog/issues"
   },
-  "devDependencies": {
-    "slonik": "^33.1.0",
-    "ts-node": "^10.9.1",
-    "tsx": "^3.12.5",
-    "zod": "^3.21.4"
-  },
   "dependencies": {
-    "@faker-js/faker": "^7.6.0"
+    "express": "^4.18.2",
+    "db": "0.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
   }
 }
