@@ -75,7 +75,7 @@ export const Comment = ({ comment, comments, depth = 0, onReplied = () => {} }) 
         {replying && (
           <form onSubmit={handleReplied}>
             <input type="text" required name="content"/>
-            <button type="submit">send</button>
+            <button type="submit">post</button>
             {replyingError && <span>Error trying to create reply</span>}
           </form>
         )}
@@ -83,7 +83,7 @@ export const Comment = ({ comment, comments, depth = 0, onReplied = () => {} }) 
         <a href="#" onClick={editToggle}>{editing ? 'Cancel': 'Edit'}</a>
         {editing && (
           <form onSubmit={handleEdited}>
-            <input type="text" required name="content"/>
+            <input defaultValue={comment.content} type="text" required name="content"/>
             <button type="submit">save</button>
             {editingError && <span>Error trying to edit comment</span>}
           </form>
